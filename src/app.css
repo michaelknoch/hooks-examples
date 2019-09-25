@@ -17,7 +17,7 @@
     margin-bottom: 20px;
     padding: 3px 5px;
 
-    cursor: crosshair;
+    cursor: pointer;
     transition-duration: 0.2s;
     border: none;
     outline: none;

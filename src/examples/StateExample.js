@@ -1,43 +1,45 @@
 import React from "react";
 
 class StateExample extends React.Component {
-    state = { counter: 0 };
-
-    updateCounter(value) {
-        this.setState(oldState => ({
-            counter: oldState.counter + value,
-        }));
-    }
+    state = { renderMore: false };
 
     render() {
         return (
             <div style={{ display: "flex", flexDirection: "column" }}>
                 <div
                     style={{
-                        minWidth: "400px",
+                        width: "400px",
                         backgroundColor: "orange",
-                        textAlign: "center",
+                        textAlign: "left",
+                        padding: 10,
                     }}
                 >
                     <h2>State example:</h2>
-                    <h3>{`I'm a counter: ${this.state.counter}`}</h3>
+                    {this.state.renderMore && (
+                        <div>
+                            <p>
+                                Bla bla bla bla bla bla bla bla bla bla bla bla
+                                bla bla bla bla bla bla bla bla bla bla bla bla
+                                bla bla{" "}
+                            </p>
+                            <p>
+                                Even more bla bla bla bla bla bla bla bla bla
+                                bla bla bla bla bla bla bla bla bla bla bla bla
+                                bla bla bla bla bla{" "}
+                            </p>
+                        </div>
+                    )}
                 </div>
 
                 <div>
                     <button
                         onClick={() => {
-                            this.updateCounter(1);
+                            this.setState(prevState => ({
+                                renderMore: !prevState.renderMore,
+                            }));
                         }}
                     >
-                        Increment
-                    </button>
-
-                    <button
-                        onClick={() => {
-                            this.updateCounter(-1);
-                        }}
-                    >
-                        Decrement
+                        {this.state.renderMore ? "Less" : "More"}
                     </button>
                 </div>
             </div>
