@@ -6,7 +6,7 @@
 -   why are they are so hyped?
 -   how can i use them?
 
-#### Hooks Meta Info
+#### Meta
 
 -   introduced in React 16.8
 -   opt in, no breaking change, 100% backwards compatible
@@ -36,7 +36,7 @@
 
 #### And then?
 
--   write your own custom hooks
+-   write your own custom hooks :sunglasses:
 -   community hooks
     -   apollo https://www.apollographql.com/docs/react/api/react-hooks/
     -   redux https://react-redux.js.org/next/api/hooks
