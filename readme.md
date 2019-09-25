@@ -25,8 +25,8 @@
         -   Hooks let us organize the logic inside a component into reusable isolated units and they apply the React philosophy inside components (explicit data flow and composition)
         -   https://twitter.com/prchdk/status/1056960391543062528
 
-    -   Hooks let you always use functions instead of having to constantly switch between functions, higher-order components render props and **classes**.
-        -   no classes, no this, no binding issues
+-   Hooks let you always use functions instead of having to constantly switch between functions, higher-order components render props and **classes**.
+    -   no classes, no this, no binding issues
 
 #### How to get started?
 

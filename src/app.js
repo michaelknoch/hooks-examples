@@ -18,8 +18,9 @@ const Index = () => {
         <div style={{ display: "flex", flexDirection: "column" }}>
             <h1>HOOKS HOOKS HOOKS</h1>
             <h2>Examples</h2>
+
+            <Link to="/state">State</Link>
             <Link to="/lifecycle">Lifecyle</Link>
-            <Link to="/state">Lifecyle</Link>
             <Link to="/listener">Listener</Link>
             <Link to="/apollo">Apollo</Link>
         </div>
@@ -31,9 +32,9 @@ const App = () => {
         <ApolloProvider client={client}>
             <div className={style.wrapper}>
                 <Router>
-                    <Route path="/" component={Index} />
-                    <Route path="/lifecycle" component={LifecycleExample} />
+                    <Route exact path="/" component={Index} />
                     <Route path="/state" component={StateExample} />
+                    <Route path="/lifecycle" component={LifecycleExample} />
                     <Route path="/listener" component={ListenerExample} />
                     <Route path="/apollo" component={ApolloExample} />
                 </Router>

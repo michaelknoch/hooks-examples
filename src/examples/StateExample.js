@@ -5,46 +5,39 @@ class StateExample extends React.Component {
 
     render() {
         return (
-            <div style={{ display: "flex", flexDirection: "column" }}>
-                <div
-                    style={{
-                        width: "400px",
-                        backgroundColor: "orange",
-                        textAlign: "left",
-                        padding: 10,
-                    }}
-                >
-                    <h2>State example:</h2>
-                    {this.state.renderMore && (
-                        <div>
-                            <p>
-                                Bla bla bla bla bla bla bla bla bla bla bla bla
-                                bla bla bla bla bla bla bla bla bla bla bla bla
-                                bla bla{" "}
-                            </p>
-                            <p>
-                                Even more bla bla bla bla bla bla bla bla bla
-                                bla bla bla bla bla bla bla bla bla bla bla bla
-                                bla bla bla bla bla{" "}
-                            </p>
-                        </div>
-                    )}
+            <div style={style.wrapperWrapper}>
+                <div style={style.wrapper}>
+                    <h2>State example</h2>
+                    {this.state.renderMore && <Blah />}
                 </div>
 
-                <div>
-                    <button
-                        onClick={() => {
-                            this.setState(prevState => ({
-                                renderMore: !prevState.renderMore,
-                            }));
-                        }}
-                    >
-                        {this.state.renderMore ? "Less" : "More"}
-                    </button>
-                </div>
+                <button
+                    onClick={() => {
+                        this.setState(prevState => ({
+                            renderMore: !prevState.renderMore,
+                        }));
+                    }}
+                >
+                    {this.state.renderMore ? "Less" : "More"}
+                </button>
             </div>
         );
     }
 }
+
+const Blah = () => <p>Bla bla bla bla bla bla bla bla bla bla bla</p>;
+
+const style = {
+    wrapperWrapper: {
+        display: "flex",
+        flexDirection: "column",
+    },
+    wrapper: {
+        width: "400px",
+        backgroundColor: "orange",
+        textAlign: "left",
+        padding: 10,
+    },
+};
 
 export default StateExample;
