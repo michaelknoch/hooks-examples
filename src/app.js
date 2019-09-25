@@ -1,9 +1,9 @@
-import React, { useState, useCallback } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import LifecycleExample from "./examples/LifecycleExample";
-import StateExample from "./examples/StateExample";
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import style from "./app.css";
+import LifecycleExample from "./examples/LifecycleExample";
+import StateExample from "./examples/StateExample";
 
 function App() {
     return (
