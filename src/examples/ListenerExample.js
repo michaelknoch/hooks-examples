@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 class ListenerExample extends React.Component {
     componentDidMount() {
@@ -18,4 +18,19 @@ class ListenerExample extends React.Component {
     }
 }
 
-export default ListenerExample;
+// functional approach
+
+function onKeyDown(event) {
+    console.log("functional keydown", event.key);
+}
+
+const FunctionalListenerExample = () => {
+    useEffect(() => {
+        document.addEventListener("keydown", onKeyDown);
+        return () => document.addEventListener("keydown", onKeyDown);
+    }, []);
+
+    return <h2>ListenerExample (open dev tools and press some keys)</h2>;
+};
+
+export default FunctionalListenerExample;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 class StateExample extends React.Component {
     state = { counter: 0 };
@@ -45,4 +45,47 @@ class StateExample extends React.Component {
     }
 }
 
-export default StateExample;
+// functional approach
+
+const FunctionalStateExample = () => {
+    const [counter, setCounter] = useState(0);
+
+    function updateCounter(value) {
+        setCounter(oldState => oldState + value);
+    }
+
+    return (
+        <div style={{ display: "flex", flexDirection: "column" }}>
+            <div
+                style={{
+                    minWidth: "400px",
+                    backgroundColor: "orange",
+                    textAlign: "center",
+                }}
+            >
+                <h2>State example:</h2>
+                <h3>{`I'm a counter: ${counter}`}</h3>
+            </div>
+
+            <div>
+                <button
+                    onClick={() => {
+                        updateCounter(1);
+                    }}
+                >
+                    Increment
+                </button>
+
+                <button
+                    onClick={() => {
+                        updateCounter(-1);
+                    }}
+                >
+                    Decrement
+                </button>
+            </div>
+        </div>
+    );
+};
+
+export default FunctionalStateExample;
