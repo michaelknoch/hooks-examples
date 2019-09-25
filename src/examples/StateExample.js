@@ -11,24 +11,35 @@ class StateExample extends React.Component {
 
     render() {
         return (
-            <div>
-                <h2>State example:</h2>
-                <h3>{`I'm a counter: ${this.state.counter}`}</h3>
-                <button
-                    onClick={() => {
-                        this.updateCounter(1);
+            <div style={{ display: "flex", flexDirection: "column" }}>
+                <div
+                    style={{
+                        minWidth: "400px",
+                        backgroundColor: "orange",
+                        textAlign: "center",
                     }}
                 >
-                    Increment
-                </button>
+                    <h2>State example:</h2>
+                    <h3>{`I'm a counter: ${this.state.counter}`}</h3>
+                </div>
 
-                <button
-                    onClick={() => {
-                        this.updateCounter(-1);
-                    }}
-                >
-                    Decrement
-                </button>
+                <div>
+                    <button
+                        onClick={() => {
+                            this.updateCounter(1);
+                        }}
+                    >
+                        Increment
+                    </button>
+
+                    <button
+                        onClick={() => {
+                            this.updateCounter(-1);
+                        }}
+                    >
+                        Decrement
+                    </button>
+                </div>
             </div>
         );
     }
