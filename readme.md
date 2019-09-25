@@ -33,3 +33,10 @@
 -   listen to this talk
 -   learn 2 essential hooks `useState` and `useEffect`
 -   even if you have a bad first reaction, I encourage you to give hooks a fair try and play with it. I think you’ll like it.
+
+#### And then?
+
+-   write your own custom hooks
+-   community hooks
+    -   apollo https://www.apollographql.com/docs/react/api/react-hooks/
+    -   redux https://react-redux.js.org/next/api/hooks
