@@ -9,9 +9,9 @@ class ListenerExample extends React.Component {
         document.addEventListener("keydown", this.onKeyDown);
     }
 
-    onKeyDown(event) {
+    onKeyDown = event => {
         console.log("keydown", event.key);
-    }
+    };
 
     render() {
         return <h2>ListenerExample (open dev tools and press some keys)</h2>;
