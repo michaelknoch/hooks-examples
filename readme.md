@@ -9,7 +9,7 @@
 #### What?
 
 -   new React Feature introduced in 16.8 (https://reactjs.org/docs/hooks-intro.html)
--   let you use React features like state, lifecycle, contextand more from a function — by doing a single function call.
+-   let you use React features like state, lifecycle, context and more from a function — by doing a single function call.
 -   turn complex problems into one-liners and you can share them across your application or with the React community
 -   opt in, no breaking change
 -   hooks reference: https://reactjs.org/docs/hooks-reference.html
