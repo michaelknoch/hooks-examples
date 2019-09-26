@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const WrapperComponent = ({ children }) => {
     const [isMounted, setIsMounted] = useState(false);
@@ -27,7 +27,9 @@ const WrapperComponent = ({ children }) => {
             >
                 Update
             </button>
-            {isMounted ? <LifecycleExample counter={counter} /> : null}
+            {isMounted ? (
+                <FunctionalLifecycleExample counter={counter} />
+            ) : null}
         </div>
     );
 };
@@ -54,5 +56,22 @@ class LifecycleExample extends React.Component {
         );
     }
 }
+
+const FunctionalLifecycleExample = ({ counter }) => {
+    useEffect(() => {
+        console.log("update", { counter });
+    });
+
+    useEffect(() => {
+        return () => console.log("unmount");
+    }, []);
+
+    return (
+        <div style={{ backgroundColor: "orange", padding: 50 }}>
+            <h2>LifecycleExample</h2>
+            <p>{`props: { counter: ${counter} }`}</p>
+        </div>
+    );
+};
 
 export default WrapperComponent;

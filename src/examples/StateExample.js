@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 class StateExample extends React.Component {
     state = { renderMore: false };
@@ -40,4 +40,25 @@ const style = {
     },
 };
 
-export default StateExample;
+const FunctionalStateExample = () => {
+    const [renderMore, setRenderMore] = useState(false);
+
+    return (
+        <div style={style.wrapperWrapper}>
+            <div style={style.wrapper}>
+                <h2>State example</h2>
+                {renderMore && <Blah />}
+            </div>
+
+            <button
+                onClick={() => {
+                    setRenderMore(prevRenderMore => !prevRenderMore);
+                }}
+            >
+                {renderMore ? "Less" : "More"}
+            </button>
+        </div>
+    );
+};
+
+export default FunctionalStateExample;
