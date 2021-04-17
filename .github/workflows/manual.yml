@@ -1,0 +1,16 @@
+# .github/workflows/example-2.yml
+
+name: Manual Inputs
+on:
+    workflow_dispatch:
+        inputs:
+            version:
+                description: Bump Version
+                required: true
+jobs:
+    bump-version:
+        name: Bump Package Version
+        runs-on: ubuntu-latest
+        steps:
+            - name: Example variable usage
+              run: echo ${{ github.event.inputs.version }}
