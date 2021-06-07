@@ -14,3 +14,6 @@ jobs:
         steps:
             - name: Example variable usage
               run: echo ${{ github.event.inputs.version }}
+
+            - name: test
+              run: echo "test"
