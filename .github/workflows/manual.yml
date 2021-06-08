@@ -14,3 +14,7 @@ jobs:
         steps:
             - name: Example variable usage
               run: echo ${{ github.event.inputs.version }}
+
+            - run: npm version patch
+            - run: echo $GITHUB_REF
+            - run: git push origin $GITHUB_REF
