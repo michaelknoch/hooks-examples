@@ -4,8 +4,9 @@ name: Manual Inputs
 on:
     workflow_dispatch:
         FASTLANE_SESSION:
+            description: FASTLANE_SESSION
             required: true
-
+            
 jobs:
     bump-version:
         name: Bump Package Version
