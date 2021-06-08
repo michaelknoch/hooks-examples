@@ -3,10 +3,10 @@
 name: Manual Inputs
 on:
     workflow_dispatch:
-        FASTLANE_SESSION:
-            description: FASTLANE_SESSION
-            required: true
-            
+        inputs:
+            fastlane:
+                description: fastlane
+                required: true
 jobs:
     bump-version:
         name: Bump Package Version
