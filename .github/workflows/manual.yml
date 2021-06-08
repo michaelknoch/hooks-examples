@@ -12,9 +12,7 @@ jobs:
         name: Bump Package Version
         runs-on: ubuntu-latest
         steps:
-            - name: Example variable usage
-              run: echo ${{ github.event.inputs.version }}
-
+            - uses: actions/checkout@v2
             - run: npm version patch
             - run: echo $GITHUB_REF
             - run: git push origin $GITHUB_REF
