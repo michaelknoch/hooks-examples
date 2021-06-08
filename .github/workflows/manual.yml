@@ -4,8 +4,8 @@ name: Manual Inputs
 on:
     workflow_dispatch:
         inputs:
-            fastlane_session:
-                description: fastlane_session
+            FASTLANE_SESSION:
+                description: FASTLANE_SESSION
                 required: true
 jobs:
     bump-version:
