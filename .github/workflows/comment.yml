@@ -20,5 +20,5 @@ jobs:
                     trigger: '@expensive-tests'
                     reaction: rocket
             - run: echo "just a test"
-            - run: 'echo Found it!'
+            - run: echo "found it"
                 if: steps.check.outputs.triggered == 'true'
