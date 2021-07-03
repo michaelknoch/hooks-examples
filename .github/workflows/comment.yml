@@ -9,7 +9,7 @@ on:
 
 jobs:
     test:
-        name: test
+        name: test lol
         runs-on: ubuntu-latest
         steps:
           - uses: khan/pull-request-comment-trigger@master
