@@ -19,8 +19,8 @@ jobs:
               reaction: rocket
             env:
               GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+          - run: 'echo always?'
+          - run: git branch
+          - run: echo $GITHUB_REF
           - run: 'echo Found it!'
             if: steps.check.outputs.triggered == 'true'
-         - run: 'echo always?'
-         - run: git branch
-         - run: echo $GITHUB_REF
