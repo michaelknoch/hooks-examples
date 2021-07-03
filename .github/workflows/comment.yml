@@ -19,6 +19,7 @@ jobs:
               reaction: rocket
             env:
               GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+          - uses: actions/checkout@v2
           - run: 'echo always?'
           - run: git branch
           - run: echo $GITHUB_REF
