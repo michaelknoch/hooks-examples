@@ -16,3 +16,7 @@ jobs:
             - run: npm version patch
             - run: echo $GITHUB_REF
             - run: git push origin $GITHUB_REF
+            - uses: actions/checkout@v2
+            - uses: ouzi-dev/commit-status-updater@v1.1.0
+              with:
+                status: "success"
