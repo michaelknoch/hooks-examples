@@ -21,4 +21,4 @@ jobs:
                     reaction: rocket
             - run: echo "just a test"
             - run: echo "found it"
-                if: steps.check.outputs.triggered == 'true'
+                if: steps.check.outputs.triggered == "true"
