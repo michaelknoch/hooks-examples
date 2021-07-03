@@ -1,4 +1,4 @@
-# .github/workflows/example-2.yml
+
 
 name: comment
 on:
@@ -9,16 +9,15 @@ on:
 
 jobs:
     test:
-        name: test
+        name: test lol
         runs-on: ubuntu-latest
         steps:
-            - uses: khan/pull-request-comment-trigger@master
-                id: check
-                env:
-                    GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
-                with:
-                    trigger: '@expensive-tests'
-                    reaction: rocket
-            - run: echo "just a test"
-            - run: 'echo Found it!'
-                if: steps.check.outputs.triggered == 'true'
+          - uses: khan/pull-request-comment-trigger@master
+            id: check
+            with:
+              trigger: '@deploy'
+              reaction: rocket
+            env:
+              GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+          - run: 'echo Found it!'
+            if: steps.check.outputs.triggered == 'true'
