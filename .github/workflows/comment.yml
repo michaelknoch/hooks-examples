@@ -1,0 +1,24 @@
+# .github/workflows/example-2.yml
+
+name: comment
+on:
+    pull_request:
+        types: [opened]
+    issue_comment:
+        types: [created]
+
+jobs:
+    test:
+        name: test
+        runs-on: ubuntu-latest
+        steps:
+            - uses: khan/pull-request-comment-trigger@master
+                id: check
+                env:
+                    GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+                with:
+                    trigger: '@expensive-tests'
+                    reaction: rocket
+            - run: echo "just a test"
+            - run: 'echo Found it!'
+                if: steps.check.outputs.triggered == 'true'
