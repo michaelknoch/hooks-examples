@@ -13,6 +13,4 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
-            - uses: ouzi-dev/commit-status-updater@v1.1.0
-              with:
-                status: "success"
+            - uses: echo $GITHUB_TOKEN
