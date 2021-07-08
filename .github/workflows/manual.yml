@@ -1,6 +1,6 @@
 # .github/workflows/example-2.yml
 
-name: Manual Inputs
+name: tests
 on:
     workflow_dispatch:
         inputs:
