@@ -1,19 +1,14 @@
 # .github/workflows/example-2.yml
 
 name: tests
-on:
-    workflow_dispatch:
-        inputs:
-            FASTLANE_SESSION:
-                description: FASTLANE_SESSION
-                required: true
+on: workflow_dispatch
+
 jobs:
     bump-version:
         name: Bump Package Version
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
-            - run: npm version patch
             - run: echo $GITHUB_REF
             - run: ${GITHUB_REF#refs/heads/} 
             - run: $GITHUB_REF#refs/heads/ 
