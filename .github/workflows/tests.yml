@@ -9,7 +9,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
-            - run: echo $GITHUB_REF
-            - run: echo ${GITHUB_REF#refs/heads/} 
-            - run: echo $GITHUB_REF#refs/heads/ 
+            - run: echo $BRANCH_NAME 
+                env: 
+                    BRANCH_NAME: ${GITHUB_REF#refs/heads/}
 
