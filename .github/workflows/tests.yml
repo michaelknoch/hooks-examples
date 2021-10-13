@@ -15,6 +15,6 @@ jobs:
             - name: upload android apks
               uses: actions/upload-artifact@v2
               with:
-                  name: "android-test-apks-${GITHUB_SHA}"
+                  name: "android-test-apks-${{ env.GITHUB_SHA }}"
                   path: ./lol.txt
                   retention-days: 1
