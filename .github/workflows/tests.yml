@@ -9,4 +9,3 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - run: echo "android-test-apks-${GITHUB_SHA}"
-
