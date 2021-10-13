@@ -18,3 +18,5 @@ jobs:
                   name: "android-test-apks-${{ env.GITHUB_SHA }}"
                   path: ./lol.txt
                   retention-days: 1
+                  env: 
+                    GITHUB_SHA: ${GITHUB_SHA}
