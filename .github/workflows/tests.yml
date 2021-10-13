@@ -1,11 +1,20 @@
 # .github/workflows/example-2.yml
 
-name: tests
-on: workflow_dispatch
+on:
+    pull_request:
+    push:
+        branches:
+            - master
 
 jobs:
     bump-version:
         name: Bump Package Version
         runs-on: ubuntu-latest
         steps:
-            - run: echo "android-test-apks-${GITHUB_SHA}"
+            - run: touch lol.txt
+            - name: upload android apks
+              uses: actions/upload-artifact@v2
+              with:
+                  name: "android-test-apks-${GITHUB_SHA}"
+                  path: ./lol.txt
+                  retention-days: 1
