@@ -8,5 +8,5 @@ jobs:
         name: Bump Package Version
         runs-on: ubuntu-latest
         steps:
-            run: "android-test-apks-${GITHUB_SHA}"
+            - run: echo "android-test-apks-${GITHUB_SHA}"
 
