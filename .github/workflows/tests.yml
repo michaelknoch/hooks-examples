@@ -8,11 +8,5 @@ jobs:
         name: Bump Package Version
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v2
-            - run: echo $BRANCH_NAME
-              env: 
-                  BRANCH_NAME: ${{ GITHUB_REF#refs/heads/ }}
-            - run: aws s3 lol s3bucket/${BRANCH_NAME}/
-              env: 
-                  BRANCH_NAME: ${{ GITHUB_REF#refs/heads/ }}
+            run: "android-test-apks-${GITHUB_SHA}"
 
