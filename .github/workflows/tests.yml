@@ -10,11 +10,10 @@ jobs:
     bump-version:
         name: Bump Package Version
         runs-on: ubuntu-latest
+
+        concurrency: 
+            group: m1-${{ github.head_ref || github.run_id }}
+            cancel-in-progress: true
+
         steps:
-            - run: touch lol.txt
-            - name: upload android apks
-              uses: actions/upload-artifact@v2
-              with:
-                  name: "android-test-apks-${{ github.sha }}"
-                  path: ./lol.txt
-                  retention-days: 1
+            - run: sleep 200
