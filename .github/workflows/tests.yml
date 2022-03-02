@@ -16,4 +16,5 @@ jobs:
             cancel-in-progress: true
 
         steps:
+            - run: echo ${{ github.head_ref || github.run_id }}
             - run: sleep 200
