@@ -13,6 +13,7 @@ jobs:
         steps:
             - uses: actions/checkout@v3
             - uses: tj-actions/branch-names@v6
+              id: branch-name
             - run: ./sachen.sh
               env: 
-                BRANCH_NAME: "${{ steps.branch-name.outputs.current_branch }}"
+                BRANCH_NAME: ${{ steps.branch-name.outputs.current_branch }}
