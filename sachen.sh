@@ -2,4 +2,4 @@
 
 
 echo $BRANCH_NAME
-echo $GITHUB_REF
+echo $GITHUB_SHA
