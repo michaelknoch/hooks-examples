@@ -13,5 +13,3 @@ jobs:
         steps:
             - uses: actions/checkout@v3
             - run: ./sachen.sh
-              env: 
-                BRANCH_NAME: ${{ env.GITHUB_BRANCH }}
