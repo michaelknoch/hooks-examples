@@ -11,10 +11,6 @@ jobs:
         name: Bump Package Version
         runs-on: ubuntu-latest
 
-        concurrency: 
-            group: m1-${{ github.head_ref || github.run_id }}
-            cancel-in-progress: true
-
         steps:
+            - run: echo $GIT_BRANCH
             - run: echo ${{ github.head_ref || github.run_id }}
-            - run: sleep 200
