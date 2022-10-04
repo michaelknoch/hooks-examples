@@ -17,4 +17,4 @@ jobs:
             - run: ./sachen.sh
               env: 
                 BRANCH_NAME: ${{ steps.branch-name.outputs.current_branch }}
-                COMMIT: ${{ github.event.pull_request.head.sha || github.ref }}
+                COMMIT: ${{ github.event.pull_request.head.sha || github.sha }}
