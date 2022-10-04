@@ -1,4 +1,4 @@
 #!/bin/bash
 
 
-echo "${{ github.head_ref }}")
+echo "${{ github.head_ref }}"
