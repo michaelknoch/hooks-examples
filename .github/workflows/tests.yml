@@ -1,5 +1,4 @@
-on:
-    on: workflow_dispatch
+on: workflow_dispatch
 
 jobs:
     bump-version:
@@ -8,10 +7,10 @@ jobs:
         steps:
             - uses: actions/checkout@v3
             - name: Add comment to PR
-                env:
-                  URL: ${{ github.event.issue.comments_url }}
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                run: |
+              env:
+                URL: ${{ github.event.issue.comments_url }}
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              run: |
                   curl \
                     -X POST \
                     $URL \
