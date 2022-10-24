@@ -1,10 +1,5 @@
-# .github/workflows/example-2.yml
-
 on:
-    pull_request:
-    push:
-        branches:
-            - master
+    on: workflow_dispatch
 
 jobs:
     bump-version:
@@ -12,9 +7,14 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
-            - uses: tj-actions/branch-names@v6
-              id: branch-name
-            - run: ./sachen.sh
-              env: 
-                BRANCH_NAME: ${{ steps.branch-name.outputs.current_branch }}
-                COMMIT: ${{ github.event.pull_request.head.sha || github.sha }}
+            - name: Add comment to PR
+                env:
+                  URL: ${{ github.event.issue.comments_url }}
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                run: |
+                  curl \
+                    -X POST \
+                    $URL \
+                    -H "Content-Type: application/json" \
+                    -H "Authorization: token $GITHUB_TOKEN" \
+                    --data '{ "body": "blah blah" }'
